@@ -113,7 +113,9 @@ Synthetic document fixtures are under `tests/fixtures/`.
 The initial local automated browser run was blocked before tests could execute
 by a macOS sandbox browser-launch permission error. Interactive browser QA is
 recorded separately in `PLAN.md`; test code existing is not a passing E2E run.
-GitHub Actions is configured but has not run remotely. No deployment is published.
+GitHub Actions runs the same checks on pushes and pull requests. See the
+[actual run results](https://github.com/saurabh-s-baghel/statement-expense-organizer/actions)
+for remote status. No Vercel deployment is published yet.
 
 ## Deployment handoff
 

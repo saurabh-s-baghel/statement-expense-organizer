@@ -78,7 +78,7 @@ async function reviewAndMap(page: Page, method: 'PDF text' | 'OCR — verify') {
   await expect(page.locator('.source-context')).toContainText('user confirmed review; manually edited');
   const csv = page.getByLabel('CSV with a header row');
   await expect(csv).toHaveValue('Date,Description,Amount,Source line\n');
-  await expect(page.locator('tbody tr')).toHaveCount(0);
+  await expect(page.getByRole('dialog').locator('tbody tr')).toHaveCount(0);
   await csv.fill(`Date,Description,Amount,Source line\n2026-10-24,Synthetic Market,-86.42,${marketReference}\n2026-10-25,Synthetic Refund,12.50,${refundReference}`);
   await page.getByRole('button', { name: 'Preview columns', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Map your columns' })).toBeVisible();
@@ -144,7 +144,7 @@ for (const cancelImport of [false, true]) {
       await requested;
       await page.getByRole('button', { name: cancelImport ? 'Cancel import' : 'Stop extraction', exact: true }).click();
       await expect(page.getByLabel('Extracted text — editable, with page and line references', { exact: true })).toHaveCount(0);
-      await expect(page.locator('tbody tr')).toHaveCount(0);
+      await expect(page.getByRole('dialog').locator('tbody tr')).toHaveCount(0);
       if (cancelImport) {
         await expect(page.getByRole('button', { name: 'Choose a file', exact: true })).toBeVisible();
       } else {

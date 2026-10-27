@@ -69,8 +69,8 @@ private/account-linked information. Keep OCR workers/assets configured safely.
   Mach-port permission denial. Do not mark it passed. Full desktop screenshot
   blocked by automatic review because the browser window included unrelated
   private content; use a dedicated local-tab preview for safe captures.
-- Remote checks/deployment: not yet run/published. User authorized a public
-  `statement-expense-organizer` repository under their personal GitHub account.
+- Remote source: published at https://github.com/saurabh-s-baghel/statement-expense-organizer .
+  Initial commit `8f7dc66` is public; the first real GitHub Actions run is underway.
   Vercel Hobby account creation/sign-in remains a user step. No purchases made.
 - Latest local checks: privacy path check, lint, TypeScript, all 202 unit/component tests, and the
   patched PDF.js 6.4.299 production build pass. All 16 desktop/mobile E2E cases
@@ -91,3 +91,5 @@ private/account-linked information. Keep OCR workers/assets configured safely.
 - Interactive CSV/XLSX downloads from the production browser were read back:
   both contain the correct two signed amounts and line references, and neither
   repeats the full document extraction in each row.
+- Browser tests scope pre-import assertions to the active dialog, since the
+  unchanged synthetic demo remains behind it until the import is confirmed.
