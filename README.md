@@ -3,7 +3,7 @@
 A frontend engineering project for turning statement files into reviewed,
 categorized transactions and spreadsheet exports.
 
-The local application is implemented as **Folio**. It includes a responsive
+The local application is implemented as **TallyTrail**. It includes a responsive
 workspace, explicit CSV mapping, per-row review and corrections, separate
 expense/income/refund/transfer handling, currency-specific totals, filtered
 CSV/XLSX downloads, and a public category/form configuration API.

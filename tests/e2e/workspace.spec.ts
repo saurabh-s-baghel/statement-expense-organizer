@@ -48,11 +48,11 @@ test('CSV import retains invalid and duplicate rows, edits change totals, export
   await page.getByRole('button', { name: 'Export', exact: true }).click();
   const csvDownload = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Download CSV', exact: true }).click();
-  expect((await csvDownload).suggestedFilename()).toBe('folio-transactions.csv');
+  expect((await csvDownload).suggestedFilename()).toBe('tallytrail-transactions.csv');
   await page.getByRole('button', { name: 'Export', exact: true }).click();
   const xlsxDownload = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Download XLSX', exact: true }).click();
-  expect((await xlsxDownload).suggestedFilename()).toBe('folio-transactions.xlsx');
+  expect((await xlsxDownload).suggestedFilename()).toBe('tallytrail-transactions.xlsx');
   expect(outbound).toEqual([]);
 });
 

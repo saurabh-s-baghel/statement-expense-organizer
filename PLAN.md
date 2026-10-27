@@ -52,7 +52,7 @@ private/account-linked information. Keep OCR workers/assets configured safely.
 
 ## Implementation Status — October 27, 2026
 
-- Implemented: responsive Folio workspace and synthetic fixtures; CSV preview,
+- Implemented: responsive TallyTrail workspace and synthetic fixtures; CSV preview,
   explicit mapping/date/sign confirmation, retained invalid rows, provenance;
   search/category/period filters, sorting, row editing and review; currency-specific
   confirmed totals; safe CSV/XLSX downloads; public allowlisted configuration API.
