@@ -98,3 +98,8 @@ private/account-linked information. Keep OCR workers/assets configured safely.
   stable headers/footers, and mobile mapping forms use one column. Interactive
   verification now reports 319px content in a 319px viewport and clickable mapping
   confirmation. CI browser tests now use the production build; rerun pending.
+- Vercel build fix: production type checking now excludes test files and runner
+  configs. A separate `tsconfig.test.json` explicitly loads DOM matcher types;
+  `npm run typecheck` checks both programs. Verified all 202 tests, lint, both
+  type checks, normal production build, and a separate deployment-shaped build
+  with `tests/setup.ts` removed by `.vercelignore`. Actual Vercel rerun pending.

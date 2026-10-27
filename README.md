@@ -106,6 +106,10 @@ npm run test:e2e
 
 Unit/component tests cover mapping, invalid/ambiguous values, currency conflicts,
 duplicates, source review, totals, safe exports, and configuration allowlisting.
+Production TypeScript checking excludes test files and test runner configuration.
+`npm run typecheck` checks application code and then tests separately using
+`tsconfig.test.json`, which explicitly loads the DOM matcher types. This keeps
+production builds independent of test setup files excluded by `.vercelignore`.
 Playwright specs cover desktop/mobile CSV workflows plus real PDF/photo/scanned
 PDF extraction, cancellation, and same-origin GET-only network expectations.
 Synthetic document fixtures are under `tests/fixtures/`.
