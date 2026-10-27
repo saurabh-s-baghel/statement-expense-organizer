@@ -65,10 +65,10 @@ private/account-linked information. Keep OCR workers/assets configured safely.
 - Interactive QA so far: mobile-width preview renders; malformed CSV rows and
   duplicates retained; confirmation changes totals; real synthetic photo OCR
   correctly extracted both transaction dates, signs, and amounts.
-- Automated E2E execution: blocked before browser launch by macOS sandbox
-  Mach-port permission denial. Do not mark it passed. Full desktop screenshot
-  blocked by automatic review because the browser window included unrelated
-  private content; use a dedicated local-tab preview for safe captures.
+- Local automated E2E execution: blocked before browser launch by macOS sandbox
+  Mach-port permission denial. Do not mark it passed. Dedicated local-tab desktop
+  and mobile screenshots were captured safely; a full Brave-window capture was
+  excluded because it included unrelated private content.
 - Remote source: published at https://github.com/saurabh-s-baghel/statement-expense-organizer .
   Initial commit `8f7dc66` is public; the first real GitHub Actions run is underway.
   Vercel Hobby account creation/sign-in remains a user step. No purchases made.
@@ -78,8 +78,7 @@ private/account-linked information. Keep OCR workers/assets configured safely.
 - Production browser checks: scanned-PDF OCR accurately recognized both synthetic
   transaction lines; cancel returned to a retryable state. Text-PDF and photo
   OCR also worked in the earlier interactive development preview. Mobile
-  screenshot captured safely in the dedicated app tab. Desktop DOM/layout
-  structure inspected; full-window screenshot not captured for privacy.
+  screenshots captured safely in dedicated desktop and mobile app tabs.
 - Dependency audit: no high/critical production advisories. Two moderate entries
   concern ExcelJS's transitive uuid dependency (v3/v5/v6 buffer API advisory);
   ExcelJS source uses uuid v4 without buffers. Do not claim zero advisories.
@@ -93,3 +92,9 @@ private/account-linked information. Keep OCR workers/assets configured safely.
   repeats the full document extraction in each row.
 - Browser tests scope pre-import assertions to the active dialog, since the
   unchanged synthetic demo remains behind it until the import is confirmed.
+- Initial remote tests exposed a mobile hidden-label overflow (594px content in
+  a 390px viewport), long-dialog pointer interception, and a desktop dev-server
+  reload during a click. Hidden labels are anchored, modal bodies scroll within
+  stable headers/footers, and mobile mapping forms use one column. Interactive
+  verification now reports 319px content in a 319px viewport and clickable mapping
+  confirmation. CI browser tests now use the production build; rerun pending.
