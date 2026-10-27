@@ -1,0 +1,20 @@
+node_modules/
+.next/
+out/
+dist/
+coverage/
+playwright-report/
+test-results/
+test-results-*/
+.vercel/
+.env*
+!.env.example
+.DS_Store
+
+# Local learning notes and personal inputs must never be committed.
+/private/
+/flow.md
+/explain.md
+public/vendor/
+*.tsbuildinfo
+work/
