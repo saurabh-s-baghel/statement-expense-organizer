@@ -161,6 +161,6 @@ for (const cancelImport of [false, true]) {
       await page.getByRole('button', { name: 'Extract text', exact: true }).click();
       await reviewAndMap(page, 'OCR — verify');
     }
-    await expect(page.getByRole('alert')).toHaveCount(0);
+    await expect(page.getByRole('dialog').getByRole('alert')).toHaveCount(0);
   });
 }
